@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1770039033125,
-      "tag": "0000_late_ricochet",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1770042977909,
-      "tag": "0001_tearful_tag",
+      "when": 1770128035125,
+      "tag": "0000_zippy_tombstone",
       "breakpoints": true
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "id": "0ca8a9f3-ec78-4be6-89d8-ff7f26cda349",
+  "id": "2e5201f2-c463-43d5-9200-3a3246f169af",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -28,7 +28,7 @@
         },
         "user_id": {
           "name": "user_id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         },
@@ -126,6 +126,63 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
+    "public.secrets": {
+      "name": "secrets",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "site_name": {
+          "name": "site_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "password": {
+          "name": "password",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "identifier": {
+          "name": "identifier",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "secrets_user_id_users_id_fk": {
+          "name": "secrets_user_id_users_id_fk",
+          "tableFrom": "secrets",
+          "tableTo": "users",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
     "public.sessions": {
       "name": "sessions",
       "schema": "",
@@ -175,7 +232,7 @@
         },
         "user_id": {
           "name": "user_id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": false,
           "notNull": true
         }

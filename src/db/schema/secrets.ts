@@ -1,6 +1,7 @@
 import { boolean, pgTable, text, uuid } from "drizzle-orm/pg-core";
 import { randomUUID } from "node:crypto";
 import { users } from "./users";
+import { relations } from "drizzle-orm";
 
 export const secretsTable = pgTable("secrets", {
   id: uuid("id").primaryKey().$defaultFn(() => randomUUID()),
@@ -11,3 +12,11 @@ export const secretsTable = pgTable("secrets", {
   password: text("password").notNull(),
   identifier: text("identifier").notNull(),
 })
+
+export const secretsRelations = relations(secretsTable, ({ one }) => ({
+  users: one(users, {
+    fields: [secretsTable.userId],
+    references: [users.id]
+  }),
+}));
+
