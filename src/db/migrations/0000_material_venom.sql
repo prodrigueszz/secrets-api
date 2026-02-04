@@ -1,8 +1,8 @@
 CREATE TABLE "accounts" (
-	"id" uuid PRIMARY KEY NOT NULL,
+	"id" text PRIMARY KEY NOT NULL,
 	"account_id" text NOT NULL,
 	"provider_id" text NOT NULL,
-	"user_id" uuid NOT NULL,
+	"user_id" text NOT NULL,
 	"access_token" text,
 	"refresh_token" text,
 	"id_token" text,
@@ -15,27 +15,27 @@ CREATE TABLE "accounts" (
 );
 --> statement-breakpoint
 CREATE TABLE "secrets" (
-	"id" uuid PRIMARY KEY NOT NULL,
-	"user_id" uuid NOT NULL,
+	"id" text PRIMARY KEY NOT NULL,
+	"user_id" text NOT NULL,
 	"site_name" text NOT NULL,
 	"password" text NOT NULL,
 	"identifier" text NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "sessions" (
-	"id" uuid PRIMARY KEY NOT NULL,
+	"id" text PRIMARY KEY NOT NULL,
 	"expires_at" timestamp NOT NULL,
 	"token" text NOT NULL,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp NOT NULL,
 	"ip_address" text,
 	"user_agent" text,
-	"user_id" uuid NOT NULL,
+	"user_id" text NOT NULL,
 	CONSTRAINT "sessions_token_unique" UNIQUE("token")
 );
 --> statement-breakpoint
 CREATE TABLE "users" (
-	"id" uuid PRIMARY KEY NOT NULL,
+	"id" text PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
 	"email" text NOT NULL,
 	"email_verified" boolean DEFAULT false NOT NULL,

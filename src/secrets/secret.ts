@@ -16,7 +16,7 @@ export class Secret {
     return new Secret(userId, site, identifier, password);
   }
 
-  get ientifier(): string {
+  get identifier(): string {
     return this._identifier;
   }
 

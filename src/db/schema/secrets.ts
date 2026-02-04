@@ -1,11 +1,11 @@
-import { boolean, pgTable, text, uuid } from "drizzle-orm/pg-core";
+import { pgTable, text } from "drizzle-orm/pg-core";
 import { randomUUID } from "node:crypto";
 import { users } from "./users";
 import { relations } from "drizzle-orm";
 
 export const secretsTable = pgTable("secrets", {
-  id: uuid("id").primaryKey().$defaultFn(() => randomUUID()),
-  userId: uuid("user_id")
+  id: text("id").primaryKey().$defaultFn(() => randomUUID()),
+  userId: text("user_id")
         .notNull()
         .references(() => users.id, { onDelete: "cascade" }),
   siteName: text("site_name").notNull(),
