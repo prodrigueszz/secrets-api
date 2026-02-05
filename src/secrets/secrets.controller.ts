@@ -35,7 +35,6 @@ export class SecretController {
       data: {
         id: output.id
       },
-      message: "Secret salva com sucesso"
     })
   }
 
@@ -57,7 +56,6 @@ export class SecretController {
       status: "success",
       statusCode: 200,
       data: responseData,
-      message: "Êxito"
     })
   }
 
@@ -94,7 +92,6 @@ export class SecretController {
         identifier: secret.identifier,
         password: secret.password
       },
-      message: "Recurso encontrado"
     })
   }
 
@@ -140,7 +137,6 @@ export class SecretController {
         data: {
           updatedAt: response.updatedAt
         },
-        message: "Êxito"
       })
     }
 
@@ -166,7 +162,6 @@ export class SecretController {
         data: {
           updatedAt: response.updatedAt
         },
-        message: "Êxito"
       })
     }
   }
@@ -205,7 +200,6 @@ export class SecretController {
       data: {
         deletedAt: response.deletedAt
       },
-      message: "Recurso apagado com sucesso"
     })
   }
 }

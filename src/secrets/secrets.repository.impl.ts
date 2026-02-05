@@ -42,6 +42,7 @@ export class SecretRepositoryImpl implements SecretRepository{
       })
 
       return secretsList;
+      
     } catch(error) {
       console.error(error);
       throw new Error("Database Error");
