@@ -16,7 +16,6 @@ export const SelectSecretQuerySchema = z.object({
   siteName: z.string()
   .min(1, { error: "Não pode estar vazio" })
 })
-export type SelectSecretQuery = z.infer<typeof SelectSecretQuerySchema>; 
 
 export const UpdateSecretSchema = z.object({
   params: z.object({
