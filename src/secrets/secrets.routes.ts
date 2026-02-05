@@ -11,6 +11,6 @@ secretRouter.post('/', controller.createSecretHandler);
 secretRouter.get('/', controller.getAllHandler);
 secretRouter.get('/select', controller.selectOneHandler);
 secretRouter.patch('/:id', controller.updateHandler);
-secretRouter.delete('/id', controller.deleteHandler);
+secretRouter.delete('/:id', controller.deleteHandler);
 
 export default secretRouter;

@@ -63,7 +63,7 @@ export class SecretController {
 
   selectOneHandler = async (req: Request, res: Response, next: NextFunction) => {
     const userId = req.user!.id;
-   
+    console.log(req.query);
     const result = await SelectSecretQuerySchema.safeParseAsync(req.query);
     if (!result.success) {
       const errors = z.treeifyError(result.error);

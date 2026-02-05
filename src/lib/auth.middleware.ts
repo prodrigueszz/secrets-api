@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { fromNodeHeaders } from 'better-auth/node';
 import { auth } from './auth';
-import { NeonSession } from 'drizzle-orm/neon-serverless';
 
 export const requireAuth = async (req: Request, res: Response, next: NextFunction) => {
   try {

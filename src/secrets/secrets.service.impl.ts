@@ -125,6 +125,15 @@ export class SecretServiceImpl implements SecretService {
   async deleteSecret(data: DeleteSecretRequestDTO): Promise<DeleteSecretResponseDTO> {
     const { userId, id } = data;
 
+    const secret = await this.secretRepository.getById(id);
+    if (!secret) {
+      return { deleted: false };
+    }
+
+    if (secret.userId !== userId) {
+      return { deleted: false };
+    }
+
     await this.secretRepository.delete(userId, id); 
 
     return {

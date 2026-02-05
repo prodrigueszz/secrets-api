@@ -46,7 +46,7 @@ export const auth = betterAuth({
         type: "string",
         required: true,
         input: true,
-        fieldName: "encryption_salt"
+        // fieldName: "encryption_salt"
       }
      }
   }
