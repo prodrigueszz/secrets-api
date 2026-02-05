@@ -2,10 +2,9 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors'
 import { apiReference } from '@scalar/express-api-reference'
-import { authSchema, swaggerSpec } from './swagger';
+import { authSchema, swaggerSpec } from './swagger.config,';
 import secretRouter from './secrets/secrets.routes';
 import authRouter from './lib/auth.routes';
-
 
 const app = express();
 const PORT = process.env.PORT! || 3000;
@@ -22,9 +21,14 @@ app.use(
 
 app.use(express.json());
 
-app.use('/docs', apiReference({
+app.use('/docs/auth', apiReference({
   theme: 'deepSpace',
   content: authSchema,
+}))
+
+app.use('/docs/secrets', apiReference({
+  theme: 'elysiajs',
+  content: swaggerSpec
 }))
 
 app.use('/api/v1/secrets', secretRouter)
@@ -32,6 +36,7 @@ app.use('/api/v1/secrets', secretRouter)
 app.listen(PORT, () => {
   console.log(
     `server listenning at http://127.0.0.1:${PORT}\n` +
-    `docs at http://127.0.0.1:3333/docs`
+    `auth docs at http://127.0.0.1:3333/docs/auth\n` +
+    `secrets docs at http://127.0.0.1:3333/docs/secrets`
   )
 })

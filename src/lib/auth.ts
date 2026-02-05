@@ -36,9 +36,7 @@ export const auth = betterAuth({
   ],
   plugins: [
     openAPI(),
-    bearer({
-
-    })
+    bearer()
   ],
   user: {
     additionalFields: {
