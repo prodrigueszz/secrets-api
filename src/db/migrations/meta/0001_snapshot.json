@@ -1,6 +1,6 @@
 {
-  "id": "7a57bf6d-ef71-49bc-ac6a-56fb650ed7b0",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "0b897ab4-d717-47e8-a19b-9f1da926eac1",
+  "prevId": "7a57bf6d-ef71-49bc-ac6a-56fb650ed7b0",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -317,6 +317,12 @@
           "type": "text",
           "primaryKey": false,
           "notNull": false
+        },
+        "encryption_salt": {
+          "name": "encryption_salt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",

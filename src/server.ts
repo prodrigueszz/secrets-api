@@ -1,15 +1,16 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors'
 import { apiReference } from '@scalar/express-api-reference'
-import 'dotenv/config';
 import { authSchema, swaggerSpec } from './swagger';
-import { toNodeHandler } from 'better-auth/node';
-import { auth } from './lib/auth';
+import secretRouter from './secrets/secrets.routes';
+import authRouter from './lib/auth.routes';
+
 
 const app = express();
 const PORT = process.env.PORT! || 3000;
 
-app.all("/api/auth/*splat", toNodeHandler(auth));
+app.use(authRouter);
 
 app.use(
   cors({
@@ -26,6 +27,7 @@ app.use('/docs', apiReference({
   content: authSchema,
 }))
 
+app.use('/api/v1/secrets', secretRouter)
 
 app.listen(PORT, () => {
   console.log(

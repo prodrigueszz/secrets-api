@@ -1,8 +1,8 @@
 import { betterAuth } from 'better-auth'
-import { openAPI } from 'better-auth/plugins'
+import { bearer, openAPI } from 'better-auth/plugins'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { db } from '../db/client'
-import { argon2, randomUUID } from 'node:crypto'
+import { v7 as uuidv7 } from 'uuid'
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -15,7 +15,7 @@ export const auth = betterAuth({
   },
   session: {
     expiresIn: 60*60*24*7,
-    updateAge: 60*60*24
+    updateAge: 60*60*24,
   },
   databaseHooks: {
     user: {
@@ -24,7 +24,7 @@ export const auth = betterAuth({
           return {
             data: {
               ...user,
-              id: randomUUID(),
+              id: uuidv7(),
             }
           }
         }
@@ -35,6 +35,19 @@ export const auth = betterAuth({
     "http://127.0.0.1"
   ],
   plugins: [
-    openAPI()
-  ] 
+    openAPI(),
+    bearer({
+
+    })
+  ],
+  user: {
+    additionalFields: {
+      encryptionSalt: {
+        type: "string",
+        required: true,
+        input: true,
+        fieldName: "encryption_salt"
+      }
+     }
+  }
 })

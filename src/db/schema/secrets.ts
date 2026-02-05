@@ -1,10 +1,9 @@
 import { pgTable, text } from "drizzle-orm/pg-core";
-import { randomUUID } from "node:crypto";
 import { users } from "./users";
 import { relations } from "drizzle-orm";
 
-export const secretsTable = pgTable("secrets", {
-  id: text("id").primaryKey().$defaultFn(() => randomUUID()),
+export const secrets = pgTable("secrets", {
+  id: text("id").primaryKey(),
   userId: text("user_id")
         .notNull()
         .references(() => users.id, { onDelete: "cascade" }),
@@ -13,9 +12,9 @@ export const secretsTable = pgTable("secrets", {
   identifier: text("identifier").notNull(),
 })
 
-export const secretsRelations = relations(secretsTable, ({ one }) => ({
+export const secretsRelations = relations(secrets, ({ one }) => ({
   users: one(users, {
-    fields: [secretsTable.userId],
+    fields: [secrets.userId],
     references: [users.id]
   }),
 }));

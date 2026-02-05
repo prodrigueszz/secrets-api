@@ -1,5 +1,5 @@
 import { accounts } from "./accounts";
-import { secretsTable } from "./secrets";
+import { secrets } from "./secrets";
 import { sessions } from "./sessions";
 import { users } from "./users";
 import { verifications } from "./verifications";
@@ -9,5 +9,5 @@ export const  schema = {
   sessions,
   verifications,
   accounts,
-  secretsTable
+  secretsTable: secrets
 }

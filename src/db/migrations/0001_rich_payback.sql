@@ -1,0 +1,1 @@
+ALTER TABLE "users" ADD COLUMN "encryption_salt" text NOT NULL;
