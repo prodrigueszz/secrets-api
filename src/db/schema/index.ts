@@ -1,8 +1,8 @@
-import { accounts } from "./accounts";
-import { secrets } from "./secrets";
-import { sessions } from "./sessions";
-import { users } from "./users";
-import { verifications } from "./verifications";
+import { accounts } from "./accounts.js";
+import { secrets } from "./secrets.js";
+import { sessions } from "./sessions.js";
+import { users } from "./users.js";
+import { verifications } from "./verifications.js";
 
 export const  schema = { 
   users,

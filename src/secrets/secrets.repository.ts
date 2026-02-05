@@ -1,4 +1,4 @@
-import { Secret } from "./secret";
+import { Secret } from "./secret.js";
 
 export interface SecretRepository {
   save(secret: Secret): Promise<void>;

@@ -1,7 +1,7 @@
 import { betterAuth } from 'better-auth'
 import { bearer, openAPI } from 'better-auth/plugins'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
-import { db } from '../db/client'
+import { db } from '../db/client.js'
 import { v7 as uuidv7 } from 'uuid'
 
 export const auth = betterAuth({

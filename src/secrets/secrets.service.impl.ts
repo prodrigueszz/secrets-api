@@ -1,4 +1,4 @@
-import { Secret } from "./secret";
+import { Secret } from "./secret.js";
 import { 
   CreateSecretRequestDTO, 
   CreateSecretResponseDTO, 
@@ -11,9 +11,9 @@ import {
   UpdateSecretIdentifierRequestDTO, 
   UpdateSecretPasswordRequestDTO, 
   UpdateSecretResponseDTO 
-} from "./secrets.dto";
-import { SecretRepository } from "./secrets.repository";
-import { SecretService } from "./secrets.service";
+} from "./secrets.dto.js";
+import { SecretRepository } from "./secrets.repository.js";
+import { SecretService } from "./secrets.service.js";
 
 export class SecretServiceImpl implements SecretService {
   constructor(private readonly secretRepository: SecretRepository){}

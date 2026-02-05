@@ -2,9 +2,9 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors'
 import { apiReference } from '@scalar/express-api-reference'
-import { authSchema, swaggerSpec } from './swagger.config,';
-import secretRouter from './secrets/secrets.routes';
-import authRouter from './lib/auth.routes';
+import secretRouter from './secrets/secrets.routes.js';
+import authRouter from './lib/auth.routes.js';
+import { authSchema, swaggerSpec } from './swagger.config.js';
 
 const app = express();
 const PORT = process.env.PORT! || 3000;

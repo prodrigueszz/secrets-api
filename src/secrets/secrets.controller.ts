@@ -1,6 +1,11 @@
 import { NextFunction, Request, Response } from "express";
-import { SecretService } from "./secrets.service";
-import { CreateSecretSchema, DeleteSecretSchema, SelectSecretQuerySchema, UpdateSecretSchema } from "./secrets.schema";
+import { SecretService } from "./secrets.service.js";
+import { 
+  CreateSecretSchema, 
+  DeleteSecretSchema, 
+  SelectSecretQuerySchema, 
+  UpdateSecretSchema 
+} from "./secrets.schema.js";
 import z from "zod";
 
 export class SecretController {

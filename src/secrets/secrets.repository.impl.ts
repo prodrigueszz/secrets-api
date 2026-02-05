@@ -1,7 +1,7 @@
 import { NodePgDatabase } from "drizzle-orm/node-postgres";
-import { SecretRepository } from "./secrets.repository";
-import { Secret } from "./secret";
-import { secrets } from "../db/schema/secrets";
+import { SecretRepository } from "./secrets.repository.js";
+import { Secret } from "./secret.js";
+import { secrets } from "../db/schema/secrets.js";
 import { and, eq } from 'drizzle-orm';
 
 export class SecretRepositoryImpl implements SecretRepository{

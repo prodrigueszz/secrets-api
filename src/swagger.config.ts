@@ -1,5 +1,5 @@
 import swaggerJsdoc from 'swagger-jsdoc';
-import { auth } from './lib/auth';
+import { auth } from './lib/auth.js';
 
 export const swaggerOptions = {
   definition: {

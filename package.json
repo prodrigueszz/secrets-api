@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "db:migrate": "npx drizzle-kit migrate",
     "db:generate": "npx drizzle-kit generate",
     "db:studio": "npx drizzle-kit studio",

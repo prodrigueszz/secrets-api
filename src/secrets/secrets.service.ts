@@ -10,7 +10,7 @@ import {
   UpdateSecretIdentifierRequestDTO, 
   UpdateSecretPasswordRequestDTO, 
   UpdateSecretResponseDTO 
-} from "./secrets.dto";
+} from "./secrets.dto.js";
 
 export interface SecretService {
   createNewSecret(data: CreateSecretRequestDTO): Promise<CreateSecretResponseDTO>;

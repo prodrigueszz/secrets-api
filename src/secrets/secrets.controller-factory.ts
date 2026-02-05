@@ -1,7 +1,7 @@
-import { db } from "../db/client"
-import { SecretController } from "./secrets.controller";
-import { SecretRepositoryImpl } from "./secrets.repository.impl"
-import { SecretServiceImpl } from "./secrets.service.impl";
+import { db } from "../db/client.js"
+import { SecretController } from "./secrets.controller.js";
+import { SecretRepositoryImpl } from "./secrets.repository.impl.js"
+import { SecretServiceImpl } from "./secrets.service.impl.js";
 
 export const makeSecretController = () => {
   const repository = new SecretRepositoryImpl(db);

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { requireAuth } from "../lib/auth.middleware";
-import { makeSecretController } from "./secrets.controller-factory";
+import { requireAuth } from "../lib/auth.middleware.js";
+import { makeSecretController } from "./secrets.controller-factory.js";
 
 const secretRouter = Router();
 
