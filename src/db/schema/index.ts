@@ -4,7 +4,7 @@ import { sessions } from "./sessions.js";
 import { users } from "./users.js";
 import { verifications } from "./verifications.js";
 
-export const  schema = { 
+export const schema = { 
   users,
   sessions,
   verifications,

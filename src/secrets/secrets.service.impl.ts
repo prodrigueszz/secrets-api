@@ -46,7 +46,12 @@ export class SecretServiceImpl implements SecretService {
     }
 
     const response = secretsList.map(secret => {
-      return { id: secret.id, siteName: secret.siteName }
+      return { 
+        id: secret.id, 
+        siteName: secret.siteName,
+        identifier: secret.identifier,
+        password: secret.password
+      }
     });
 
     return response;

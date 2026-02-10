@@ -149,7 +149,7 @@
  *   post:
  *     tags:
  *       - Secrets
- *     summary: Criar novo secret
+ *     summary: /secrets
  *     description: |
  *       Cria um novo secret (credencial) para o usuário autenticado.
  *       
@@ -218,7 +218,7 @@
  *   get:
  *     tags:
  *       - Secrets
- *     summary: Listar todos os secrets
+ *     summary: /secrets
  *     description: Retorna todos os secrets do usuário autenticado.
  *     security:
  *       - bearerAuth: []
@@ -279,7 +279,7 @@
  *   get:
  *     tags:
  *       - Secrets
- *     summary: Buscar secret por nome do site
+ *     summary: /secrets/select
  *     description: |
  *       Retorna as credenciais de um secret específico baseado no nome do site.
  *       
@@ -357,7 +357,7 @@
  *   patch:
  *     tags:
  *       - Secrets
- *     summary: Atualizar secret
+ *     summary: /secrets/{id}
  *     description: |
  *       Atualiza o identifier ou password de um secret existente.
  *       
@@ -452,7 +452,7 @@
  *   delete:
  *     tags:
  *       - Secrets
- *     summary: Deletar secret
+ *     summary: /secrets{id}
  *     description: |
  *       Remove permanentemente um secret do usuário autenticado.
  *       

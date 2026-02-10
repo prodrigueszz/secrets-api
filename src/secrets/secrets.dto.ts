@@ -16,6 +16,8 @@ export type GetAllSecretsRequestDTO = {
 export type GetAllSecretsResponseDTO = {
   id: string,
   siteName: string,
+  identifier: string,
+  password: string,
 }
 
 export type SelectSecretRequestDTO = {
