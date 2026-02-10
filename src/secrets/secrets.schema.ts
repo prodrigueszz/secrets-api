@@ -6,7 +6,7 @@ export const CreateSecretSchema = z.object({
   .max(30, { error: "Este campo deve conter no máximo 30 caracteres" }),
   identifier: z.string()
   .min(3, { error: "Este campo deve conter pelo menos 3 caracteres" })
-  .max(30, { error: "Este campo deve conter no máximo 30 caracteres" }),
+  .max(60, { error: "Este campo deve conter no máximo 60 caracteres" }),
   password: z.string()
   .min(8, { error: "Este campo deve conter pelo menos 3 caracteres" })
   .max(20, { error: "Este campo deve conter no máximo 30 caracteres" }),
