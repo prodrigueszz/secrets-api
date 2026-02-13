@@ -52,8 +52,7 @@ export class SecretController {
       return res.status(200).json({
         status: "success",
         statusCode: 200,
-        data: [],
-        message: "Não há Secrets salvas"
+        data: []
       })
     }
 

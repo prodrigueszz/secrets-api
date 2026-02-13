@@ -110,8 +110,6 @@
  *           example: 200
  *         data:
  *           type: object
- *         message:
- *           type: string
  *
  *     ErrorResponse:
  *       type: object
@@ -264,7 +262,6 @@
  *                   status: "success"
  *                   statusCode: 200
  *                   data: []
- *                   message: "Não há Secrets salvas"
  *       401:
  *         description: Não autenticado
  *         content:
@@ -452,7 +449,7 @@
  *   delete:
  *     tags:
  *       - Secrets
- *     summary: /secrets{id}
+ *     summary: /secrets/{id}
  *     description: |
  *       Remove permanentemente um secret do usuário autenticado.
  *       
